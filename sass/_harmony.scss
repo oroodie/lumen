@@ -80,7 +80,7 @@
   @if type-of($harmony) != 'color' {
     // If $harmony is not a color, try running it as a function
     @if function-exists($harmony) {
-      $harmony: call($harmony, $color);
+      $harmony: call(get-function($harmony), $color);
     }
 
     // Error if $harmony is still not a valid color
